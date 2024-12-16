@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fceefb;
+}
+
+.container {
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container.start .user_result {
+    transform-origin: left;
+    animation:  userShake 0.7s ease infinite;
+}
+
+.container.start .npc_result {
+    transform-origin: right;
+    animation:  npcShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes npcShake {
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+.result_image {
+    display: flex;
+    column-gap: 7rem;
+}
+
+.result_image img {
+    width: 100px;
+}
+
+.user_result img {
+    transform: rotate(90deg);
+}
+
+.npc_result img {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #741fb4;
+    margin-top: 1.5rem;
+}
+
+.container.start .option_image {
+    pointer-events: none;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.option_image p {
+    color: #741fb4;
+    font-size: 1.235rem;
+    margin-top: 1rem;
+    pointer-events: none;
+    
+}
+
+.option_image img {
+    width: 50px;
+    pointer-events: none;
+}
+
+.option_images {
+    display: flex;
+    align-items: center;
+    margin-top: 2.25rem;
+    justify-content: space-between;
+}
+
+.option_image:hover {
+    opacity: 1;
+}
+
+.option_image.active {
+    opacity: 1;
+
+}
